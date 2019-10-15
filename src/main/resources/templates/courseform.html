@@ -23,16 +23,45 @@
         <!-- End Header -->
 
         <!-- Process HTML Page -->
+        <br />
         <form action="#" th:action="@{/process}" th:object="${course}" method="post">
             <input type="hidden" th:field="*{id}" />
-            Title: <input type="text" th:field="*{title}" />
-            <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span><br />
-            Instructor: <input type="text" th:field="*{instructor}" />
-            <span th:if="${#fields.hasErrors('instructor')}" th:errors="*{instructor}"></span><br />
-            Description: <textarea rows="3" th:field="*{description}" />
-            <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span><br />
-            Credits: <input type="text" th:field="*{credit}" />
-            <span th:if="${#fields.hasErrors('credit')}" th:errors="*{credit}"></span><br />
+            <div class="row">
+                <div class="col-md-2"><b>Title</b></div>
+                <div class="col-md-10"><input type="text" th:field="*{title}" /></div>
+                <br />
+            </div>
+            <div class="row">
+                <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+                <br />
+            </div>
+            <div class="row">
+                <div class="col-md-2"><b>Instructor</b></div>
+                <div class="col-md-10"><input type="text" th:field="*{instructor}" /></div>
+                <br />
+            </div>
+            <div class="row">
+                <span th:if="${#fields.hasErrors('instructor')}" th:errors="*{instructor}"></span>
+                <br />
+            </div>
+            <div class="row">
+                <div class="col-md-2"><b>Description:</b></div>
+                <div class="col-md-10"><textarea rows="3" cols="40" th:field="*{description}" /></div>
+                <br />
+            </div>
+            <div class="row">
+                <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+                <br />
+            </div>
+            <div class="row">
+                <div class="col-md-2"><b>Credits</b></div>
+                <div class="col-md-10"><input type="text" th:field="*{credit}" /></div>
+                <br />
+            </div>
+            <div class="row">
+                <span th:if="${#fields.hasErrors('credit')}" th:errors="*{credit}"></span>
+                <br />
+            </div>
             <br />
             <input type="submit" value="Submit" />
         </form>

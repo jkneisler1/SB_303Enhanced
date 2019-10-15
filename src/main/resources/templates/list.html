@@ -19,30 +19,32 @@
     <div class="container">
 
         <!-- Header -->
-        <h2>Course Listing</h2>
+        <h2>Course List</h2>
         <!-- End Header -->
 
         <!-- Process HTML Page -->
-        <h1>Course List</h1>
-        <a href="/add">Add a Course</a><br />
-        <table>
-            <tr>
-                <th>Title</th>
-                <th>Instructor</th>
-                <th>Credits</th>
-                <td>Actions</td>
-            </tr>
-            <tr th:each="course : ${courses}">
-                <td th:text="${course.title}"></td>
-                <td th:text="${course.instructor}"></td>
-                <td th:text="${course.credit}"></td>
-                <td>
-                    <a th:href="@{/update/{id}(id=${course.id})}">Update</a> -
-                    <a th:href="@{/detail/{id}(id=${course.id})}">Details</a> -
-                    <a th:href="@{/delete/{id}(id=${course.id})}">Delete</a>
-                </td>
-            </tr>
-        </table>
+        <br />
+        <a href="/add">Add a Course</a>
+        <br /><br />
+
+        <div class="row">
+            <div class="col-md-2"><b>Title</b></div>
+            <div class="col-md-2"><b>Instructor</b></div>
+            <div class="col-md-1"><b>Credits</b></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6"><b>Actions</b></div>
+        </div>
+        <div th:each="course : ${courses}" >
+            <div class="row">
+                <div class="col-md-2"><span th:text="${course.title}"></span></div>
+                <div class="col-md-2"><span th:text="${course.instructor}"></span></div>
+                <div class="col-md-1"><span th:number="${course.credit}"></span></div>
+                <div class="col-md-1"><span>&#9670;</span></span></div>
+                <div class="col-md-2"><a th:href="@{/update/{id}(id=${course.id})}">Update</a></div>
+                <div class="col-md-2"><a th:href="@{/detail/{id}(id=${course.id})}">Details</a></div>
+                <div class="col-md-2"><a th:href="@{/delete/{id}(id=${course.id})}">Delete</a></div>
+            </div>
+        </div>
         <!-- End Process HTML Page-->
 
         <!-- Footer -->

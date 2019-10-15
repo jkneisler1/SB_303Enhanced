@@ -20,21 +20,27 @@
 
         <!-- Header -->
         <h2>Show Details</h2>
+        <br />
         <!-- End Header -->
 
         <!-- Process HTML Page -->
-        <a href="/">Show All Courses</a><br />
-        Title: <span th:text="${course.title}"></span><br />
-        Instructor: <span th:text="${course.instructor}"></span><br />
-        Description: <span th:text="${course.description}"></span><br />
-        Credits: <span th:text="${course.credit}"></span><br />
-        <a th:href="@{/delete/{id}(id=${course.id})}">Delete this course</a>
+        <div class="row">
+            <div class="col-md-2"><b>Title:</b></div><div class="col-md-10"><span th:text="${course.title}"></span></div><br />
+        </div>
+        <div class="row">
+            <div class="col-md-2"><b>Instructor:</b></div><div class="col-md-10"><span th:text="${course.instructor}"></span></div><br />
+        </div>
+        <div class="row">
+            <div class="col-md-2"><b>Description:</b></div><div class="col-md-10"><span th:text="${course.description}"></span></div><br />
+        </div>
+        <div class="row">
+            <div class="col-md-2"><b>Credits:</b></div><div class="col-md-10"><span th:text="${course.credit}"></span></div><br />
+        </div>
         <!-- End Process HTML Page-->
 
         <!-- Footer -->
         <div th:replace="base :: footer"></div>
         <!-- End Footer -->
-
     </div>
 
     <!-- JS code: insert this just before the </body> tag  (this version fits on a page) -->
