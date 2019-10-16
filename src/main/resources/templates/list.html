@@ -38,8 +38,8 @@
             <div class="row">
                 <div class="col-md-2"><span th:text="${course.title}"></span></div>
                 <div class="col-md-2"><span th:text="${course.instructor}"></span></div>
-                <div class="col-md-1"><span th:number="${course.credit}"></span></div>
-                <div class="col-md-1"><span>&#9670;</span></span></div>
+                <div class="col-md-1"><span th:text="${course.credit}"></span></div>
+                <div class="col-md-1"><span>&#9670;</span></div>
                 <div class="col-md-2"><a th:href="@{/update/{id}(id=${course.id})}">Update</a></div>
                 <div class="col-md-2"><a th:href="@{/detail/{id}(id=${course.id})}">Details</a></div>
                 <div class="col-md-2"><a th:href="@{/delete/{id}(id=${course.id})}">Delete</a></div>
