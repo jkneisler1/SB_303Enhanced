@@ -20,6 +20,21 @@ public class HomeController {
         return "list";
     }
 
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    @RequestMapping("/admin")
+    public String admin() {
+        return "admin";
+    }
+
+    @RequestMapping("/super")
+    public String supervisor() {
+        return "super";
+    }
+
     @GetMapping("/add")
     public String courseForm(Model model) {
         model.addAttribute("course", new Course());
